@@ -21,10 +21,12 @@ struct node* create(struct node* head){
         printf("Enter data :");
         scanf("%d",&newnode->data);
         newnode->next=0;
-        if(head==0){
+        if(head==0)
+        {
             temp=head=newnode;
         }
-        else{
+        else
+        {
             temp->next=newnode;
             temp=newnode;
         }
@@ -33,8 +35,7 @@ struct node* create(struct node* head){
     }while(ch);
     return head;
 }
-void split(struct node *h)
-{
+void split(struct node *h){
 struct node* positive=NULL,*negative=NULL;
     struct node* t,*t2;
     struct node *temp=h;
@@ -46,7 +47,7 @@ struct node* positive=NULL,*negative=NULL;
             else{
                 t->next=temp;
                 t=temp;
-            }  
+            }
         }
         else{
             if(negative==NULL){
@@ -66,8 +67,7 @@ struct node* positive=NULL,*negative=NULL;
     printf("\nThe negative linked list is :\n");
     display(negative);
     }
-int main()
-{
+int main(){
     struct node *head=NULL;
     printf("\tENTER THR LINKED LIST :\n");
     struct node* h=create(head);
@@ -76,3 +76,4 @@ int main()
     split(h);
         return 0;
 }
+
